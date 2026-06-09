@@ -18,8 +18,10 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
 
-          script: |
-            cd /var/www/testcicd-project
+          
+            script: |
+             cd /home/supportstudyexpl/public_html
+  
             git pull origin main
             composer install --no-dev --optimize-autoloader
             php artisan migrate --force
